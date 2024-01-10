@@ -1,6 +1,5 @@
 package br.dev.filipov.ecommerce;
 
-import com.theokanning.openai.completion.CompletionRequest;
 import com.theokanning.openai.completion.chat.ChatCompletionRequest;
 import com.theokanning.openai.completion.chat.ChatMessage;
 import com.theokanning.openai.completion.chat.ChatMessageRole;
@@ -14,8 +13,8 @@ public class TestaIntegracao {
         var user = "Gere 5 produtos";
         var system = "Você é um gerador de produtos fictícios para um e-commerce e deve gerar apenas o nome dos produtos solicitados pelo usuário.";
 
-        var chave = System.getenv("OPENAI_API_KEY");
-        var service = new OpenAiService(chave);
+        var key = System.getenv("OPENAI_API_KEY");
+        var service = new OpenAiService(key);
 
         var completionRequest = ChatCompletionRequest
                 .builder()
